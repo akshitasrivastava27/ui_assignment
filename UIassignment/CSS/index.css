@@ -1,0 +1,240 @@
+/* General Reset */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Basic Styling */
+body, html {
+    width: 100%;
+    height: 100%;
+}
+
+/* Header and Navigation */
+.header {
+    position: relative;
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px; 
+    max-width: 1440px; 
+     margin: auto;
+}
+
+.logo img {
+    width: 16rem; /* Default width for larger screens */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+}
+/* Add right margin to all buttons except the last child */
+.navigation .btn:not(:last-child) {
+    margin-right: 20px; /
+}
+
+
+@media (min-width: 769px) {
+    .navbar-toggler {
+        display: none;
+    }
+
+    #navbarToggleExternalContent3 {
+        display: flex;
+        justify-content: space-around;
+    }
+}
+
+
+/* Content and Video Container */
+.content-container, .video-container{
+    padding: 20px;
+}
+
+/* Adjusting the content container */
+.content-container {
+    width: 60%; /* More space allocated to content on large screens */
+     flex-grow: 1; /*Allows the content container to grow as needed */
+} 
+
+/* Video container specific adjustments */
+.video-container {
+    width: 40%; /* Set to occupy less space */
+    padding-top: 80.5%; /* 16:9 Aspect Ratio, adjusted for smaller relative width */
+    position: relative;
+}
+
+
+#video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 40vh;
+    margin-top: -4rem;
+}
+
+/* Buttons */
+.learn-more-button, .login-button {
+  
+        padding: 10px 20px; 
+        text-decoration: none;
+        font-size: 1rem; 
+        transition: background-color 0.3s ease;
+        display: inline-block;
+        min-width: 120px; 
+        height: auto; 
+        line-height: normal; 
+        border-radius: 0;
+        border: 4px solid #8ecae6;
+        background-color: white;
+        color: #8ecae6;
+        white-space: nowrap; 
+        overflow: hidden;
+        text-overflow: ellipsis; 
+        box-sizing: border-box;
+}
+
+.learn-more-button {
+    color: #8ecae6;
+    background-color: white;
+    border: 4px solid #8ecae6;
+}
+
+.learn-more-button:hover {
+    background-color: #3498db;
+}
+
+.login-button {
+    color: white;
+    background-color: #d62828;
+    border: 4px solid #d62828;
+}
+
+.login-button:hover {
+    color: #d62828;
+    background-color: #7d1818;
+}
+
+/* Media queries for even larger screens */
+@media (min-width: 1024px) {
+    .video-container {
+        width: 50%; /* Increases the width of the video container on larger screens */
+        margin-left: auto; /* Pushes the video container to the right */
+    }
+
+    .content-container {
+        width: 50%; /* Adjusts content container size to balance with video container */
+    }
+} 
+
+    h2.part1 { 
+        font-size: 2.5rem;
+        color: black;
+        font-weight: 900;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    span.part2 { 
+        color: #fcbf49;
+        font-weight: 900;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: 2.5rem;
+     }
+
+  .container-fluid{
+    font-family: serif;
+  }
+ 
+#learn-more-section p {
+    font-size: 1rem;
+    font-family: ui-monospace; 
+    color: #666; /* Light grey for readability */
+    line-height: 1.5; /* Improves text spacing */
+}
+
+.item1 { 
+    display: none; 
+} 
+
+button { 
+    padding: 10px; 
+    font-size: 20px; 
+    font-weight: 700; 
+    color: rgb(5, 14, 5); 
+    border: none; 
+    border-radius: 30px; 
+    background-color: rgb(182, 215, 182); 
+    margin-top: 20px; 
+} 
+  
+/* CSS to hide and show navigation items based on screen size */
+@media (max-width: 768px) {
+    .navbar-toggler {
+        display: block;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+
+    #navbarToggleExternalContent3 {
+        position: absolute;
+        background-color: #fff;
+        width: 100%;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    }
+
+    .logo img {
+        width: 10rem; /* Smaller width for smaller screens */
+        /* height: 3rem; Maintain aspect ratio */
+        margin-bottom: 1rem;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navigation, .content-container, .video-container {
+        width: 100%;
+    }
+
+    .content {
+        height: auto;
+    }
+    
+    h2.part1,span.part2 {
+        font-size:1.8rem;
+    }
+
+    button { 
+        padding: 10px; 
+        font-size: 14px; 
+        font-weight: 700; 
+        color: rgb(5, 14, 5); 
+        border: none; 
+        border-radius: 30px; 
+        background-color: rgb(182, 215, 182);  
+        margin-top: 20px; 
+    } 
+      
+}
+@media (min-width: 768px) {
+    .element {
+    display: none !important;
+    }
+}
