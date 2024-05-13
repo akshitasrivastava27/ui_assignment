@@ -1,0 +1,233 @@
+/* General Reset */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Basic Styling */
+body, html {
+    width: 100%;
+    height: 100%;
+} 
+
+/* LOGIN PAGE */
+
+.row {
+    background: lightgray;
+}
+
+.col {
+    background: white;
+    width: 50%;
+    height: auto;
+	margin-left: auto;
+}
+
+.col img {
+    width: 100%; /* Ensure the image takes the full width of its container */
+    /* height: 38.5rem; */
+	height: auto;
+    display: block; /* Remove extra space below image */
+  }
+
+  .carousel-item {
+    transition: opacity 0.15s ease-in-out;
+  }
+  .carousel-control-next, .carousel-control-prev {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15%;
+    color: #00000000;
+    text-align: center;
+    opacity: -3.5;
+    transition: opacity .05s ease-out;
+}
+
+/* Responsive layout - makes a one column-layout instead of a two-column layout */
+@media (max-width: 800px) {
+    .flex-item-right, .flex-item-left {
+      flex: 100%;
+    }
+  }
+
+.login-snip{
+	position:absolute;
+	padding-left: 8%;
+    padding-top: 5%;
+    width:40%;
+}
+
+.login-snip .login,
+.login-snip .sign-up-form{
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	position:fixed;
+	transform:rotateY(180deg);
+	backface-visibility:hidden;
+	transition:all .4s linear;
+}
+.login-snip .sign-in,
+.login-snip .sign-up,
+.login-space .group .check{
+	display:none;
+}
+.login-snip .tab,
+.login-space .group .label,
+.login-space .group .button{
+	color: #333333;
+	text-transform:uppercase;
+}
+.login-snip .tab{
+	font-size: 22px;
+    color: slategrey;
+    font-weight: 800;
+    margin-right: 15px;
+    padding-bottom: 5px;
+    margin: 0 15px 10px 0;
+    display: inline-block;
+    border-bottom: 2px solid transparent;
+}
+.login-snip .sign-in:checked + .tab,
+.login-snip .sign-up:checked + .tab{
+	color: gold;
+    font-weight: 900;
+    border-color: #1161ee;
+}
+.login-space{
+	min-height:345px;
+	position:relative;
+	perspective:1000px;
+	transform-style:preserve-3d;
+}
+.login-space .group{
+	margin-bottom:15px;
+}
+.login-space .group .label,
+.login-space .group .input,
+.login-space .group .button{
+	width:100%;
+	color:black;
+	font-weight: 500;
+	display:block;
+}
+.login-space .group .input,
+.login-space .group .button{
+	border:none;
+	padding:15px 20px;
+	border-radius:25px;
+	background: #E8E8E8;
+}
+.login-space .group input[data-type="password"]{
+	text-security:circle;
+	-webkit-text-security:circle;
+}
+.login-space .group .label{
+	color:#8B0000;
+	font-size:12px;
+}
+.login-space .group .button{
+	color: #E8E8E8;
+    background: #8B0000;
+}
+.login-space .group label .icon{
+	width:15px;
+	height:15px;
+	border-radius:2px;
+	position:relative;
+	display:inline-block;
+	background:#f7ceb2;;
+}
+.login-space .group label .icon:before,
+.login-space .group label .icon:after{
+	content:'';
+	width:10px;
+	height:2px;
+	background:#fff;
+	position:absolute;
+	transition:all .2s ease-in-out 0s;
+}
+.login-space .group label .icon:before{
+	left:3px;
+	width:5px;
+	bottom:6px;
+	transform:scale(0) rotate(0);
+}
+.login-space .group label .icon:after{
+	top:6px;
+	right:0;
+	transform:scale(0) rotate(0);
+}
+.login-space .group .check:checked + label{
+	color: #DB5461;
+}
+.login-space .group .check:checked + label .icon{
+	background:#1161ee;
+}
+.login-space .group .check:checked + label .icon:before{
+	transform:scale(1) rotate(45deg);
+}
+.login-space .group .check:checked + label .icon:after{
+	transform:scale(1) rotate(-45deg);
+}
+.login-snip .sign-in:checked + .tab + .sign-up + .tab + .login-space .login{
+	transform:rotate(0);
+}
+.login-snip .sign-up:checked + .tab + .login-space .sign-up-form{
+	transform:rotate(0);
+}
+
+*,:after,:before{box-sizing:border-box}
+.clearfix:after,.clearfix:before{content:'';display:table}
+.clearfix:after{clear:both;display:block}
+a{color:inherit;text-decoration:none}
+
+.foot{
+	color: #112c64;
+    font-weight: 700;
+    text-align: center;
+}
+.card{
+	width: 500px;
+	left: 100px;
+}
+
+::placeholder{
+color: #3a5d74;
+}  
+
+/* Responsive Layout Changes */
+@media (max-width: 800px) {
+    /* Hide the carousel column */
+    .col:last-child {
+		background: white;
+        display: none;
+    }
+    
+    /* Make the first column full width */
+    .col:first-child {
+        width: 100%;  /* Expands the login/sign-up column to full width */
+    }
+    
+    /* Adjust the login-snip width to be more responsive */
+    .login-snip {
+        width: 100%;
+        padding-left: 5%;  /* Adjust padding for better spacing */
+        padding-right: 5%;
+    }
+	body, html {
+        background: white; /* Ensures background remains light gray on small screens */
+    }
+
+    .row, .col {
+        background: white; /* Apply to other elements if necessary */
+    }
+}
+
